@@ -1,0 +1,16 @@
+/* config/slicemk_ergodox.overlay */
+
+/ {
+    chosen {
+        zmk,underglow = &underglow_leds;
+    };
+
+    underglow_leds: underglow_leds {
+        compatible = "ws2812-gpio";
+        label = "UNDERGLOW_LEDS";
+        /* Pin D6 (P0.10) is a common choice for nRF52840 controllers */
+        gpio-pin = <10>; 
+        chain-length = <4>; // Corrected for 4 LEDs per half
+        color-mapping = <WS-2812-GRB>;
+    };
+};
