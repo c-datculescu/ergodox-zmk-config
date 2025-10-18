@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: slicemk
       url-base: https://github.com/slicemk
-      - name: urob
+    - name: urob
       url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: slicemk
       revision: main
       import: app/west.yml
-      - name: zmk-listeners
+    - name: zmk-listeners
       remote: ssbb
       revision: v1
   self:
