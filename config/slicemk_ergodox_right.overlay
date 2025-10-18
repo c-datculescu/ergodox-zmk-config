@@ -1,0 +1,16 @@
+/* Paste this into both .overlay files */
+
+/ {
+    chosen {
+        zmk,underglow = &underglow_leds;
+    };
+
+    underglow_leds: underglow_leds {
+        compatible = "ws2812-gpio";
+        label = "UNDERGLOW_LEDS";
+        /* Pin D6 (P0.10) is a very common default for nRF52840 */
+        gpio-pin = <10>; 
+        chain-length = <4>; // 4 LEDs per half
+        color-mapping = <WS-2812-GRB>;
+    };
+};
